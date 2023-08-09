@@ -101,8 +101,7 @@ class _HomePageState extends State<HomePage> {
                   Positioned.fill(
                     child: Container(
                       child: Image.asset(
-                        isNigt?'images/noche.png':
-                        'images/dia.png',
+                        isNigt ? 'images/noche.png' : 'images/dia.png',
                         fit: BoxFit.cover,
                       ),
                       // decoration: const BoxDecoration(
@@ -115,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Positioned(
-                    top: 100,
+                    top: 70,
                     left: 20,
                     child: Container(
                       child: Column(
@@ -130,7 +129,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const SizedBox(height: 10.0),
                           Text(
-                            DateFormat("EEEE dd, MMMM").format(DateTime.now()),
+                            DateFormat("EEEE dd, MMMM, yyy")
+                                .format(DateTime.now()),
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
