@@ -13,9 +13,9 @@ A new Flutter project.
 
 # Screenshots
 
-| Weather Dashboard                               |Pronostico del Clima                             |
-|-------------------------------------------------|-------------------------------------------------|
-| <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/portada1.png" height="520"> | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/pronostico.png" height="520"> |
+| Weather Dashboard                               | Weather Dashboard                               |Pronostico del Clima                             |
+|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
+| <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/dias.png" height="520"> | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/portada1.png" height="520"> | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/pronostico.png" height="520"> |
 
  |Detalles del Clima                               | Filtral por Ciudad                              |
  |-------------------------------------------------|-------------------------------------------------|
