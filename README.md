@@ -2,15 +2,21 @@
 
 A new Flutter project.
 
-## Getting Started
+# Prerequisites
 
-This project is a starting point for a Flutter application.
+- Get an API key from [https://openweathermap.org/api/](https://openweathermap.org/api)
+- Add the API key in the class `lib\utils\app_constants.dart` 
 
-A few resources to get you started if this is your first Flutter project:
+  ````
+  const APPID = "";
+  ````
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Weather Dashboard                               |Pronostico del Clima                             |
+|-------------------------------------------------|-------------------------------------------------|
+| <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/portada.png" height="520"> | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/pronostico.png" height="520"> |
+
+ |Detalles del Clima                               | Filtral por Ciudad                              |
+ |-------------------------------------------------|-------------------------------------------------|
+ | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/detalles.png" height="520"> | <img src="https://github.com/JorgeFigueroa626/datos_climas_flutter/blob/main/images/busquedad.png" height="520"> |
