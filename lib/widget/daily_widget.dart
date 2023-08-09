@@ -31,7 +31,7 @@ class DailyWidget extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.network(
-                        "http://openweathermap.org/img/wn/${daily.weather![0].icon}@2x.png"),
+                        "http://openweathermap.org/img/wn/${daily.weather![0].icon}.png"),
                     Text(
                       daily.weather![0].main!,
                       style: const TextStyle(

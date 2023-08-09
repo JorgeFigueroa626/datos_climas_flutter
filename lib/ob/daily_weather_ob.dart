@@ -68,19 +68,19 @@ class DailyWeatherOb {
 }
 
 class Current {
-  int? dt;
-  int? sunrise;
-  int? sunset;
-  String? temp;
-  String? feelsLike;
-  int? pressure;
+  num? dt;
+  num? sunrise;
+  num? sunset;
+  num? temp;
+  num? feelsLike;
+  num? pressure;
   int? humidity;
-  String? dewPoint;
-  String? uvi;
-  int? clouds;
-  int? visibility;
-  String? windSpeed;
-  int? windDeg;
+  num? dewPoint;
+  num? uvi;
+  num? clouds;
+  num? visibility;
+  num? windSpeed;
+  num? windDeg;
   List<Weather>? weather;
 
   Current(
@@ -103,15 +103,15 @@ class Current {
     dt = json['dt'];
     sunrise = json['sunrise'];
     sunset = json['sunset'];
-    temp = json['temp'].toString();
-    feelsLike = json['feels_like'].toString();
+    temp = json['temp'];
+    feelsLike = json['feels_like'];
     pressure = json['pressure'];
     humidity = json['humidity'];
-    dewPoint = json['dew_point'].toString();
-    uvi = json['uvi'].toString();
+    dewPoint = json['dew_point'];
+    uvi = json['uvi'];
     clouds = json['clouds'];
     visibility = json['visibility'];
-    windSpeed = json['wind_speed'].toString();
+    windSpeed = json['wind_speed'];
     windDeg = json['wind_deg'];
     if (json['weather'] != null) {
       weather = <Weather>[];

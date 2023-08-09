@@ -83,6 +83,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    int hour = DateTime.now().hour;
+    bool isNigt = true;
+    if (hour >= 6 && hour <= 18) {
+      isNigt = false;
+    }
     return Scaffold(
       body: isLoading
           ? const Center(
@@ -96,7 +101,8 @@ class _HomePageState extends State<HomePage> {
                   Positioned.fill(
                     child: Container(
                       child: Image.asset(
-                        'images/baner1.jpg',
+                        isNigt?'images/noche.png':
+                        'images/dia.png',
                         fit: BoxFit.cover,
                       ),
                       // decoration: const BoxDecoration(
@@ -111,54 +117,55 @@ class _HomePageState extends State<HomePage> {
                   Positioned(
                     top: 100,
                     left: 20,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          wob.name.toString(),
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 10.0),
-                        Text(
-                          DateFormat("EEEE dd, MMMM, yyy")
-                              .format(DateTime.now()),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                    child: Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            wob.name.toString(),
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
                           ),
-                        ),
-                        const SizedBox(height: 10.0),
-                        Text(
-                          DateFormat().add_jm().format(DateTime.now()),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(height: 10.0),
+                          Text(
+                            DateFormat("EEEE dd, MMMM").format(DateTime.now()),
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5.0),
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) {
-                                return DailyForecastPage(lat, lon);
-                              },
-                            ));
-                          },
-                          child: const Text(
-                            "Pronóstico de 7 días",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline),
+                          const SizedBox(height: 10.0),
+                          Text(
+                            DateFormat().add_jm().format(DateTime.now()),
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        )
-                      ],
+                          const SizedBox(height: 5.0),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) {
+                                  return DailyForecastPage(lat, lon);
+                                },
+                              ));
+                            },
+                            child: const Text(
+                              "Pronóstico de 7 días",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(
@@ -170,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           "${wob.main!.temp.toString()} C",
                           style: const TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
                           ),
@@ -181,12 +188,12 @@ class _HomePageState extends State<HomePage> {
                               height: 50,
                               width: 50,
                               child: Image.network(
-                                  "http://openweathermap.org/img/wn/${wob.weather![0].icon}@2x.png"),
+                                  "http://openweathermap.org/img/wn/${wob.weather![0].icon}.png"),
                             ),
                             Text(
                               wob.weather![0].main!,
                               style: const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -201,7 +208,7 @@ class _HomePageState extends State<HomePage> {
                     top: 95,
                     child: IconButton(
                       icon: const Icon(Icons.search,
-                          color: Colors.black, size: 30),
+                          color: Colors.white, size: 30),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) {

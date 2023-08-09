@@ -17,6 +17,7 @@ class SearchByCityPage extends StatefulWidget {
 class _SearchByCityPageState extends State<SearchByCityPage> {
   WeatherOb? wob;
   bool isLoading = false;
+  String? error;
   TextEditingController _cityTec = TextEditingController();
 
   getWeatherData(String cityName) async {
@@ -32,9 +33,10 @@ class _SearchByCityPageState extends State<SearchByCityPage> {
       setState(() {
         wob = WeatherOb.fromJson(json.decode(response.body));
         isLoading = false;
+        error = null;
       });
     } else {
-      print("error");
+      error = "No se encontro informacion";
       isLoading = false;
     }
   }
@@ -145,7 +147,7 @@ class _SearchByCityPageState extends State<SearchByCityPage> {
                                         height: 50,
                                         width: 50,
                                         child: Image.network(
-                                            "http://openweathermap.org/img/wn/${wob!.weather?[0].icon}@2x.png"),
+                                            "http://openweathermap.org/img/wn/${wob!.weather?[0].icon}.png"),
                                       ),
                                       Text(
                                         wob!.weather![0].main!,
